@@ -16,7 +16,7 @@ local_data_key!(LocalDistributor: Arc<Mutex<Distributor>>)
 macro_rules! distributor(
     () => {{
         LocalDistributor.get()
-            .expect(format!("Lithium: {}: {}: Tried to get a lithium::Distributor outside of a lithium thread.",
+            .expect(format!("Actor: {}: {}: Tried to get a actor::Distributor outside of an actor thread.",
                             file!(), line!()).as_slice())
     }}
 )
